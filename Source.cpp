@@ -1,4 +1,3 @@
-
 #include "DefaultHuman.h"
 #include "TypicalHuman.h"
 #include "HealerHuman.h"
