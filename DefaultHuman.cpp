@@ -1,46 +1,46 @@
 #include "DefaultHuman.h"
 
-//Установить новое здоровье
+//РЈСЃС‚Р°РЅРѕРІРёС‚СЊ РЅРѕРІРѕРµ Р·РґРѕСЂРѕРІСЊРµ
 void DefaultHuman::setHealth(int newHealth)
 {
 	this->health = newHealth;
 	checkHealth();
 }
 
-//Конструктор с параметрами для целителя
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё РґР»СЏ С†РµР»РёС‚РµР»СЏ
 DefaultHuman::DefaultHuman(unsigned _hitPower):FULL_HEALTH(DEFAULT_MAX_HEALTH), health(DEFAULT_MAX_HEALTH), regeneration(true), hitPower(_hitPower), regenPower(1), isAlive(true) {}
 
-//Конструктор
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 DefaultHuman::DefaultHuman() : FULL_HEALTH(DEFAULT_MAX_HEALTH), health(DEFAULT_MAX_HEALTH), regeneration(true), hitPower(5), regenPower(1), isAlive(true) {}
 
 
-//Регенерация здоровья
+//Р РµРіРµРЅРµСЂР°С†РёСЏ Р·РґРѕСЂРѕРІСЊСЏ
 void DefaultHuman::regen()
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return;
 
 	if (this->regeneration)
 		this->setHealth(this->health + this->regenPower);
 }
 
-//Нанесение урона
+//РќР°РЅРµСЃРµРЅРёРµ СѓСЂРѕРЅР°
 void DefaultHuman::attack(DefaultHuman* enemy)
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return;
 
-	//Нулевой указатель
+	//РќСѓР»РµРІРѕР№ СѓРєР°Р·Р°С‚РµР»СЊ
 	if (enemy == nullptr) return;
 
 	this->regen();
 	(*enemy).health -= this->hitPower;
 }
 
-//Проверка здоровья
+//РџСЂРѕРІРµСЂРєР° Р·РґРѕСЂРѕРІСЊСЏ
 void DefaultHuman::checkHealth()
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return;
 
 	if (this->health > FULL_HEALTH)
@@ -49,23 +49,23 @@ void DefaultHuman::checkHealth()
 		isAlive = false;
 }
 
-//Узнать здоровье
+//РЈР·РЅР°С‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 const int DefaultHuman::getHealth()
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return 0;
 
 	return this->health;
 }
 
-//Проверка наличия жизни
+//РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ Р¶РёР·РЅРё
 const bool DefaultHuman::getAlive()
 {
 	this->checkHealth();
 	return isAlive;
 }
 
-//Сериализация
+//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 Document DefaultHuman::toJSON()
 {
 	Document document;
@@ -101,7 +101,7 @@ Document DefaultHuman::toJSON()
 	return document;
 }
 
-//Десериализация
+//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 bool DefaultHuman::fromJSON(const Value& value)
 {
 	if (!value.IsObject()) return false;

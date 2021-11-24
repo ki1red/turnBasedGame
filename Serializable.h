@@ -9,9 +9,9 @@ class Serializable {
 public:
 	Serializable() {};
 
-	//Сериализация по умолчанию
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	virtual Document toJSON() = 0;
 
-	//Десериализация по умолчанию
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	virtual bool fromJSON(const Value& value) = 0;
 };

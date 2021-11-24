@@ -6,9 +6,9 @@ public:
 
 	TypicalHuman();
 
-	//Сериализация
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	Document toJSON() override;
 
-	//Десериализация
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	bool fromJSON(const Value& value) override;
 };

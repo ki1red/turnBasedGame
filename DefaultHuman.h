@@ -11,40 +11,40 @@ protected:
 
 	const int FULL_HEALTH;
 
-	//Добавить здоровье
+	//Р”РѕР±Р°РІРёС‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 	void setHealth(int hp);
 
-	//Конструктор с параметрами для целителя
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё РґР»СЏ С†РµР»РёС‚РµР»СЏ
 	DefaultHuman(unsigned _hitPower);
 public:
 	static const unsigned int DEFAULT_MAX_HEALTH = 20U;
-	//Значения по умолчанию
+	//Р—РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	DefaultHuman();
 
-	//Исцелить
+	//РСЃС†РµР»РёС‚СЊ
 	virtual void treatOthers(DefaultHuman* other) {};
 	
-	//Восстановить здоровье
+	//Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 	virtual void receiveHealing(int health) {};
 
-	//Регенерация здоровья
+	//Р РµРіРµРЅРµСЂР°С†РёСЏ Р·РґРѕСЂРѕРІСЊСЏ
 	void regen();
 
-	//Нанесение урона
+	//РќР°РЅРµСЃРµРЅРёРµ СѓСЂРѕРЅР°
 	void attack(DefaultHuman *enemy);
 
-	//Проверка здоровья
+	//РџСЂРѕРІРµСЂРєР° Р·РґРѕСЂРѕРІСЊСЏ
 	void checkHealth();
 
-	//Узнать здоровье
+	//РЈР·РЅР°С‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 	const int getHealth();
 
-	//Проверка наличия жизни
+	//РџСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ Р¶РёР·РЅРё
 	const bool getAlive();
 
-	//Сериализация
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	Document toJSON() override;
 
-	//Десериализация
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	bool fromJSON(const Value& value) override;
 };

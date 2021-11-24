@@ -1,23 +1,23 @@
-#pragma once
+Р«#pragma once
 #include "DefaultHuman.h"
 class HealerHuman : public DefaultHuman
 {
 private:
-	//Сила магического восстановления
+	//РЎРёР»Р° РјР°РіРёС‡РµСЃРєРѕРіРѕ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
 	int healerPower;
 
 public:
 	HealerHuman();
 
-	//Полечить
+	//РџРѕР»РµС‡РёС‚СЊ
 	void treatOthers(DefaultHuman* other) override;
 
-	//Восстановить здоровье
+	//Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 	void receiveHealing(int health) override;
 
-	//Сериализация
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	Document toJSON() override;
 
-	//Десериализация
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	bool fromJSON(const Value& value) override;
 };

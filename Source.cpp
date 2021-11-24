@@ -5,7 +5,6 @@
 #include "GroupCharacters.h"
 #include "Battle.h"
 #include <memory>
-#pragma execution_character_set("utf-8")
 
 #include <iostream>
 #include <vector>
@@ -19,20 +18,20 @@ void gameTest()
 	GroupCharacters Green, Blue(vector <DefaultHuman*> (0));
 	const int sizeGroups = 2;
 
-	cout << "-----------------ÏÅÐÂÀß ÊÎÌÀÍÄÀ-----------------" << endl << endl;
+	cout << "-----------------ÐŸÐ•Ð Ð’ÐÐ¯ ÐšÐžÐœÐÐÐ”Ð-----------------" << endl << endl;
 	for (size_t i = 0; i < sizeGroups; i++)
 	{
-		cout << "Äîáàâèòü: 1- Îáû÷íîãî, 2- Öåëèòåëÿ" << endl;
+		cout << "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ: 1- ÐžÐ±Ñ‹Ñ‡Ð½Ð¾Ð³Ð¾, 2- Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»Ñ" << endl;
 		char k = _getch();
 		switch (k)
 		{
 		case '1':
 			Green.addCharacter(new TypicalHuman);
-			cout << "Äîáàâëåí Îáû÷íûé" << endl;
+			cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹" << endl;
 			break;
 		case '2':
 			Green.addCharacter(new HealerHuman);
-			cout << "Äîáàâëåí Öåëèòåëü" << endl;
+			cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ" << endl;
 			break;
 		default:
 			i--;
@@ -40,20 +39,20 @@ void gameTest()
 		}
 	}
 
-	cout << "-----------------ÂÒÎÐÀß ÊÎÌÀÍÄÀ-----------------" << endl << endl;
+	cout << "-----------------Ð’Ð¢ÐžÐ ÐÐ¯ ÐšÐžÐœÐÐÐ”Ð-----------------" << endl << endl;
 	for (size_t i = 0; i < sizeGroups; i++)
 	{
-		cout << "Äîáàâèòü: 1- Îáû÷íîãî, 2- Öåëèòåëÿ" << endl;
+		cout << "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ: 1- ÐžÐ±Ñ‹Ñ‡Ð½Ð¾Ð³Ð¾, 2- Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»Ñ" << endl;
 		char k = _getch();
 		switch (k)
 		{
 		case '1':
 			Blue.addCharacter(new TypicalHuman);
-			cout << "Äîáàâëåí Îáû÷íûé" << endl;
+			cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹" << endl;
 			break;
 		case '2':
 			Blue.addCharacter(new HealerHuman);
-			cout << "Äîáàâëåí Öåëèòåëü" << endl;
+			cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ" << endl;
 			break;
 		default:
 			i--;
@@ -61,7 +60,7 @@ void gameTest()
 		}
 	}
 
-	cout << endl << "Íàæìèòå ëþáóþ êëàâèøó..." << endl;
+	cout << endl << "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð»ÑŽÐ±ÑƒÑŽ ÐºÐ»Ð°Ð²Ð¸ÑˆÑƒ..." << endl;
 	char k = _getch();
 
 	bool gameOver = false;
@@ -71,62 +70,62 @@ void gameTest()
 
 		system("cls");
 		//group 1
-		cout << "-----------------ÏÅÐÂÀß ÊÎÌÀÍÄÀ-----------------" << endl;
+		cout << "-----------------ÐŸÐ•Ð Ð’ÐÐ¯ ÐšÐžÐœÐÐÐ”Ð-----------------" << endl;
 		for (size_t i = 0; i < Game.getTeam(1).getGroup().size() ; i++)
 		{
 			if (typeid(*Game.getTeam(1).choiceCharacter(i)) == typeid(HealerHuman))
-				cout << i + 1 << " - Öåëèòåëü\t" << Game.getTeam(1).choiceCharacter(i)->getHealth()*5 << "%" << endl;
+				cout << i + 1 << " - Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ\t" << Game.getTeam(1).choiceCharacter(i)->getHealth()*5 << "%" << endl;
 			else if (typeid(*Game.getTeam(1).choiceCharacter(i)) == typeid(TypicalHuman))
-				cout << i + 1 << " - Îáû÷íûé\t" << Game.getTeam(1).choiceCharacter(i)->getHealth()*5 << "%" << endl;
+				cout << i + 1 << " - ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹\t" << Game.getTeam(1).choiceCharacter(i)->getHealth()*5 << "%" << endl;
 		}
 		//cout << Game.getTeam(1).getGroup().size() << "\t" << Game.getTeam(2).getGroup().size() << endl;
 		//group 1
-		cout << endl << "-----------------ÂÒÎÐÀß ÊÎÌÀÍÄÀ-----------------" << endl;
+		cout << endl << "-----------------Ð’Ð¢ÐžÐ ÐÐ¯ ÐšÐžÐœÐÐÐ”Ð-----------------" << endl;
 		for (size_t i = 0; i < Game.getTeam(2).getGroup().size() ; i++)
 		{
 			if (typeid(*Game.getTeam(2).choiceCharacter(i)) == typeid(HealerHuman))
-				cout << i + 1 << " - Öåëèòåëü\t" << Game.getTeam(2).choiceCharacter(i)->getHealth()*5 << "%" << endl;
+				cout << i + 1 << " - Ð¦ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ\t" << Game.getTeam(2).choiceCharacter(i)->getHealth()*5 << "%" << endl;
 			else if (typeid(*Game.getTeam(2).choiceCharacter(i)) == typeid(TypicalHuman))
-				cout << i + 1 << " - Îáû÷íûé\t" << Game.getTeam(2).choiceCharacter(i)->getHealth()*5 << "%" << endl;
+				cout << i + 1 << " - ÐžÐ±Ñ‹Ñ‡Ð½Ñ‹Ð¹\t" << Game.getTeam(2).choiceCharacter(i)->getHealth()*5 << "%" << endl;
 		}
 
 		if (Game.moveSelection() == Game.getTeam(1))
-			cout << "Õîäèò ïåðâàÿ êîìàíäà. Âûáåðèòå ïåðñîíàæà" << endl;
+			cout << "Ð¥Ð¾Ð´Ð¸Ñ‚ Ð¿ÐµÑ€Ð²Ð°Ñ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð°. Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°" << endl;
 		else if (Game.moveSelection() == Game.getTeam(2))
-			cout << "Õîäèò âòîðàÿ êîìàíäà. Âûáåðèòå ïåðñîíàæà" << endl;
+			cout << "Ð¥Ð¾Ð´Ð¸Ñ‚ Ð²Ñ‚Ð¾Ñ€Ð°Ñ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð°. Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°" << endl;
 
-		//Âûáîðû ïåðñîíàæåé
+		//Ð’Ñ‹Ð±Ð¾Ñ€Ñ‹ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ÐµÐ¹
 		char k, g;
 		do
 		{
-			cout << "Âûáåðèòå ïåðñîíàæà" << endl;
+			cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°" << endl;
 			k = _getch();
 			if ((k-'0'-1) >= 0 && (k - '0'-1) < Game.moveSelection().getGroup().size()) break;
-			cout << "Íåò òàêîãî ïåðñîíàæà" << endl;
+			cout << "ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°" << endl;
 		} while (true);
 
 		char action;
-		//Âûáîð õîäà
+		//Ð’Ñ‹Ð±Ð¾Ñ€ Ñ…Ð¾Ð´Ð°
 		if (typeid(*Game.moveSelection().choiceCharacter(k - '0' - 1)) == typeid(TypicalHuman))
 			while (true)
 			{
-				cout << "Âûáåðèòå äåéñòâèå: Àòàêîâàòü - x, Íè÷åãî - z" << endl;
+				cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ÐÑ‚Ð°ÐºÐ¾Ð²Ð°Ñ‚ÑŒ - x, ÐÐ¸Ñ‡ÐµÐ³Ð¾ - z" << endl;
 				action = _getch();
 				if (action == 'x' || action == 'z') break;
-				cout << "Íåò òàêîãî äåéñòâèÿ" << endl;
+				cout << "ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ" << endl;
 			}
 
 		else if (typeid(*Game.moveSelection().choiceCharacter(k - '0' - 1)) == typeid(HealerHuman))
 			while (true)
 			{
-				cout << "Âûáåðèòå äåéñòâèå: Àòàêîâàòü - x, Ëå÷èòü - h, Íè÷åãî - z" << endl;
+				cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ÐÑ‚Ð°ÐºÐ¾Ð²Ð°Ñ‚ÑŒ - x, Ð›ÐµÑ‡Ð¸Ñ‚ÑŒ - h, ÐÐ¸Ñ‡ÐµÐ³Ð¾ - z" << endl;
 				action = _getch();
 				if (action == 'x' || action == 'h' || action == 'z') break;
-				cout << "Íåò òàêîãî äåéñòâèÿ" << endl;
+				cout << "ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ" << endl;
 			}
 
 		bool occurred = false;
-		//Âûáîð âðàãà
+		//Ð’Ñ‹Ð±Ð¾Ñ€ Ð²Ñ€Ð°Ð³Ð°
 		do
 		{
 			if (action == 'z')
@@ -137,9 +136,9 @@ void gameTest()
 			}
 			
 			if (action == 'h')
-				cout << "Âûáåðèòå òîâàðèùà ïî êîìàíäå" << endl;
+				cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚Ð¾Ð²Ð°Ñ€Ð¸Ñ‰Ð° Ð¿Ð¾ ÐºÐ¾Ð¼Ð°Ð½Ð´Ðµ" << endl;
 			else
-				cout << "Âûáåðèòå ïðîòèâíèêà" << endl;
+				cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐ°" << endl;
 			g = _getch();
 			
 
@@ -154,7 +153,7 @@ void gameTest()
 			
 			if (occurred) break;
 
-			cout << "Íåò òàêîãî ïåðñîíàæà" << endl;
+			cout << "ÐÐµÑ‚ Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°" << endl;
 		} while (true);
 
 		
@@ -162,14 +161,14 @@ void gameTest()
 		gameOver = Game.checkEndGame();
 	} while (!gameOver);
 
-	cout << "-------------------------ÈÃÐÀ ÎÊÎÍ×ÅÍÀ----------------------------" << endl;
+	cout << "-------------------------Ð˜Ð“Ð Ð ÐžÐšÐžÐÐ§Ð•ÐÐ----------------------------" << endl;
 	cout << "\t\t";
 
 	if (Game.getTeam(1).getGroup().size() == 0)
-		cout << "Ïîáåäèëà âòîðàÿ êîìàíäà" << endl;
+		cout << "ÐŸÐ¾Ð±ÐµÐ´Ð¸Ð»Ð° Ð²Ñ‚Ð¾Ñ€Ð°Ñ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð°" << endl;
 
 	else if (Game.getTeam(2).getGroup().size() == 0)
-		cout << "Ïîáåäèëà ïåðâàÿ êîìàíäà" << endl;
+		cout << "ÐŸÐ¾Ð±ÐµÐ´Ð¸Ð»Ð° Ð¿ÐµÑ€Ð²Ð°Ñ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð°" << endl;
 
 }
 
@@ -184,7 +183,7 @@ void printJSON(const Document& d)
 void testJSON()
 {
 
-	cout << "\n\tÏåðñîíàæè\n" << endl;
+	cout << "\n\tÐŸÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð¸\n" << endl;
 
 	DefaultHuman Andrey;
 	HealerHuman Artem;
@@ -212,24 +211,24 @@ void testJSON()
 
 
 	if (copyFromAndrey)
-		std::cout << "Óñïåøíî ñêîïèðîâàíî ñ Default â Typical " << endl;
+		std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ Default Ð² Typical " << endl;
 	else
-		std::cout << "Íå óäàëîñü ñêîïèðîâàòü ñ Default â Typical " << endl;
+		std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Default Ð² Typical " << endl;
 
 	if (copyFromArtem)
-		std::cout << "Óñïåøíî ñêîïèðîâàíî ñ Healer â Typical " << endl;
+		std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ Healer Ð² Typical " << endl;
 	else
-		std::cout << "Íå óäàëîñü ñêîïèðîâàòü ñ Healer â Typical " << endl;
+		std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Healer Ð² Typical " << endl;
 
 	if (copyFromKirill)
-		std::cout << "Óñïåøíî ñêîïèðîâàíî ñ Typical â Typical " << endl;
+		std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ Typical Ð² Typical " << endl;
 	else
-		std::cout << "Íå óäàëîñü ñêîïèðîâàòü ñ Typical â Typical " << endl;
+		std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Typical Ð² Typical " << endl;
 
 	cout << endl << "------------------Edit Leonid T" << endl;
 	printJSON(docLeonid);
 
-	cout << "\n\tÃðóïïû ïåðñîíàæåé\n" << endl;
+	cout << "\n\tÐ“Ñ€ÑƒÐ¿Ð¿Ñ‹ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ÐµÐ¹\n" << endl;
 
 	GroupCharacters green, blue;
 	
@@ -253,13 +252,13 @@ void testJSON()
 	bool copyFromGreen = blue.fromJSON(docGreen);
 	docBlue = blue.toJSON();
 	if (copyFromGreen)
-		std::cout << "Óñïåøíî ñêîïèðîâàíî ñ Group â Group " << endl;
+		std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ Group Ð² Group " << endl;
 	else
-		std::cout << "Íå óäàëîñü ñêîïèðîâàòü ñ Group â Group " << endl;
+		std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Group Ð² Group " << endl;
 	cout << endl << "------------------Edit Blue" << endl;
 	printJSON(docBlue);
 
-	cout << "\n\tÁîè\n" << endl;
+	cout << "\n\tÐ‘Ð¾Ð¸\n" << endl;
 	Battle first(green, blue), second(blue, green);
 
 	
@@ -277,9 +276,9 @@ void testJSON()
 
 	bool copyFromFirst = second.fromJSON(docFirst);
 	if (copyFromFirst)
-		std::cout << "Óñïåøíî ñêîïèðîâàíî ñ Battle â Battle " << endl;
+		std::cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¾ Ñ Battle Ð² Battle " << endl;
 	else
-		std::cout << "Íå óäàëîñü ñêîïèðîâàòü ñ Battle â Battle " << endl;
+		std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Battle Ð² Battle " << endl;
 	cout << endl << "------------------Edit Second" << endl;
 	docSecond = second.toJSON();
 	printJSON(docSecond);

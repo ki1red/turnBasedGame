@@ -1,13 +1,13 @@
 #include "GroupCharacters.h"
 
 
-//Конструктор с параметрамаи
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјР°Рё
 GroupCharacters::GroupCharacters(std::vector <DefaultHuman*> _party) : party(_party) {}
 
-//Конструктор по умолчанию
+//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 GroupCharacters::GroupCharacters() : party(std::vector <DefaultHuman*> (0)) {}
 
-//Добавление нового персонажа в команду
+//Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р° РІ РєРѕРјР°РЅРґСѓ
 void GroupCharacters::addCharacter(DefaultHuman* character)
 {
 	for (auto i = this->party.begin(); i != this->party.end(); i++)
@@ -17,7 +17,7 @@ void GroupCharacters::addCharacter(DefaultHuman* character)
 	this->party.push_back(character);
 }
 
-//Удаление персонажа из команды
+//РЈРґР°Р»РµРЅРёРµ РїРµСЂСЃРѕРЅР°Р¶Р° РёР· РєРѕРјР°РЅРґС‹
 void GroupCharacters::kickCharacter(DefaultHuman* character)
 {
 	for (auto i = this->party.begin(); i != this->party.end(); i++)
@@ -28,19 +28,19 @@ void GroupCharacters::kickCharacter(DefaultHuman* character)
 	}
 }
 
-//Выбрать персонажа
+//Р’С‹Р±СЂР°С‚СЊ РїРµСЂСЃРѕРЅР°Р¶Р°
 DefaultHuman* GroupCharacters::choiceCharacter(int index)
 {
 	return getGroup()[index];
 }
 
-//Получить список команды
+//РџРѕР»СѓС‡РёС‚СЊ СЃРїРёСЃРѕРє РєРѕРјР°РЅРґС‹
 std::vector <DefaultHuman*> GroupCharacters::getGroup()
 {
 	return this->party;
 }
 
-//Сериализация
+//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 Document GroupCharacters::toJSON()
 {
 	Document document;
@@ -66,7 +66,7 @@ Document GroupCharacters::toJSON()
 	return document;
 }
 
-//Десериализация
+//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 bool GroupCharacters::fromJSON(const Value& value)
 {
 	if (!value.IsObject()) return false;
@@ -115,7 +115,7 @@ bool GroupCharacters::fromJSON(const Value& value)
 	return true;
 }
 
-//Оператор сравнения
+//РћРїРµСЂР°С‚РѕСЂ СЃСЂР°РІРЅРµРЅРёСЏ
 bool GroupCharacters::operator== (const GroupCharacters& otherGroup)
 {
 	GroupCharacters group = otherGroup;
@@ -128,7 +128,7 @@ bool GroupCharacters::operator== (const GroupCharacters& otherGroup)
 	return true;
 }
 
-//Оператор присваивания
+//РћРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 GroupCharacters & GroupCharacters::operator= (const GroupCharacters & otherGroup)
 {
 	std::vector<DefaultHuman*> othergroup = otherGroup.party;

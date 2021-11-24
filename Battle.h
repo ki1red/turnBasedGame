@@ -12,13 +12,13 @@
 class Battle : public Serializable
 {
 private:
-	//Ход игроков
+	//РҐРѕРґ РёРіСЂРѕРєРѕРІ
 	int walk;
 
 	GroupCharacters group1;
 	GroupCharacters group2;
 
-	//Действия персонажей
+	//Р”РµР№СЃС‚РІРёСЏ РїРµСЂСЃРѕРЅР°Р¶РµР№
 	enum action
 	{
 		Attack = 'x',
@@ -26,32 +26,32 @@ private:
 		Nothing = 'z'
 	};
 
-	//Избавляемся от мертвых тел
+	//РР·Р±Р°РІР»СЏРµРјСЃСЏ РѕС‚ РјРµСЂС‚РІС‹С… С‚РµР»
 	void recountOfSeats(GroupCharacters& group);
 public:
 
-	//Выбор команды для хода
+	//Р’С‹Р±РѕСЂ РєРѕРјР°РЅРґС‹ РґР»СЏ С…РѕРґР°
 	GroupCharacters moveSelection();
 
-	//Выбор команды противника
+	//Р’С‹Р±РѕСЂ РєРѕРјР°РЅРґС‹ РїСЂРѕС‚РёРІРЅРёРєР°
 	GroupCharacters moveSelectionEnemy();
 
-	//Конструктор с параметрами
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Battle(GroupCharacters& _group1, GroupCharacters& _group2);
 
-	//Сделать ход
+	//РЎРґРµР»Р°С‚СЊ С…РѕРґ
 	bool nextMove(char act, DefaultHuman& you, DefaultHuman& he);
 
-	//Узнать команду
+	//РЈР·РЅР°С‚СЊ РєРѕРјР°РЅРґСѓ
 	GroupCharacters getTeam(int num);
 
-	//Конец игры
+	//РљРѕРЅРµС† РёРіСЂС‹
 	bool const checkEndGame();
 
-	//Сериализация
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	Document toJSON() override;
 
-	//Десериализация
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	bool fromJSON(const Value& value) override;
 
 };

@@ -1,16 +1,16 @@
 #include "HealerHuman.h"
 #include "DefaultHuman.h"
 
-//Конструкор
+//РљРѕРЅСЃС‚СЂСѓРєРѕСЂ
 HealerHuman::HealerHuman() : DefaultHuman(), healerPower(3) {};
 
-//Полечить
+//РџРѕР»РµС‡РёС‚СЊ
 void HealerHuman::treatOthers(DefaultHuman* other)
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return;
 
-	//Нулевой указатель
+	//РќСѓР»РµРІРѕР№ СѓРєР°Р·Р°С‚РµР»СЊ
 	if (other == nullptr) return;
 
 	this->regen();
@@ -18,16 +18,16 @@ void HealerHuman::treatOthers(DefaultHuman* other)
 	(*other).checkHealth();
 }
 
-//Восстановить здоровье
+//Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ Р·РґРѕСЂРѕРІСЊРµ
 void HealerHuman::receiveHealing(int health)
 {
-	//Если мёртв
+	//Р•СЃР»Рё РјС‘СЂС‚РІ
 	if (!isAlive) return;
 
 	this->setHealth(this->health + health);
 }
 
-//Сериализация
+//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 Document HealerHuman::toJSON()
 {
 	Document document;
@@ -66,7 +66,7 @@ Document HealerHuman::toJSON()
 	return document;
 }
 
-//Десериализация
+//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 bool HealerHuman::fromJSON(const Value& value)
 {
 	if (!value.IsObject()) return false;

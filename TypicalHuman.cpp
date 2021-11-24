@@ -3,7 +3,7 @@
 
 TypicalHuman::TypicalHuman() : DefaultHuman(6) {}
 
-//Сериализация
+//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 Document TypicalHuman::toJSON()
 {
 	Document document;
@@ -39,7 +39,7 @@ Document TypicalHuman::toJSON()
 	return document;
 }
 
-//Десериализация
+//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 bool TypicalHuman::fromJSON(const Value& value)
 {
 	if (!value.IsObject()) return false;

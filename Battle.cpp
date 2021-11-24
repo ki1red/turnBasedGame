@@ -6,7 +6,7 @@ void printJSN(const Document& d)
 	d.Accept(writer);
 	std::cout << buffer.GetString() << std::endl;
 }
-//Âûáîð êîìàíäû äëÿ õîäà
+//Ð’Ñ‹Ð±Ð¾Ñ€ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ð´Ð»Ñ Ñ…Ð¾Ð´Ð°
 GroupCharacters Battle::moveSelection()
 {
 	if (walk % 2 == 1)
@@ -15,7 +15,7 @@ GroupCharacters Battle::moveSelection()
 		return group2;
 }
 
-//Âûáîð êîìàíäû ïðîòèâíèêà
+//Ð’Ñ‹Ð±Ð¾Ñ€ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñ‹ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÐ°
 GroupCharacters Battle::moveSelectionEnemy()
 {
 	if (walk % 2 != 1)
@@ -24,7 +24,7 @@ GroupCharacters Battle::moveSelectionEnemy()
 		return group2;
 }		
 
-//Èçáàâëÿåìñÿ îò ìåðòâûõ òåë
+//Ð˜Ð·Ð±Ð°Ð²Ð»ÑÐµÐ¼ÑÑ Ð¾Ñ‚ Ð¼ÐµÑ€Ñ‚Ð²Ñ‹Ñ… Ñ‚ÐµÐ»
 void Battle::recountOfSeats(GroupCharacters& group)
 {
 	for (size_t i = 0; i < group.getGroup().size(); i++)
@@ -32,10 +32,10 @@ void Battle::recountOfSeats(GroupCharacters& group)
 			group.kickCharacter(group.choiceCharacter(i));
 }
 
-//Êîíñòðóêòîð ñ ïàðàìåòðàìè
+//ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸
 Battle::Battle(GroupCharacters& _group1, GroupCharacters& _group2) : group1(_group1), group2(_group2), walk(1) {}
 
-//Ñäåëàòü õîä
+//Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ñ…Ð¾Ð´
 bool Battle::nextMove(char a, DefaultHuman& you, DefaultHuman& he)
 {
 	action act = (action)a;
@@ -93,7 +93,7 @@ bool Battle::nextMove(char a, DefaultHuman& you, DefaultHuman& he)
 	return false;
 }
 
-//Óçíàòü êîìàíäó
+//Ð£Ð·Ð½Ð°Ñ‚ÑŒ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ
 GroupCharacters Battle::getTeam(int num)
 {
 	switch (num)
@@ -105,7 +105,7 @@ GroupCharacters Battle::getTeam(int num)
 	}
 }
 
-//Êîíåö èãðû
+//ÐšÐ¾Ð½ÐµÑ† Ð¸Ð³Ñ€Ñ‹
 bool const Battle::checkEndGame()
 {
 	bool g1 = false, g2 = false;
@@ -119,7 +119,7 @@ bool const Battle::checkEndGame()
 }
 
 
-//Ñåðèàëèçàöèÿ
+//Ð¡ÐµÑ€Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ
 Document Battle::toJSON()
 {
 	Document document;
@@ -146,7 +146,7 @@ Document Battle::toJSON()
 	return document;
 }
 
-//Äåñåðèàëèçàöèÿ
+//Ð”ÐµÑÐµÑ€Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ
 bool Battle::fromJSON(const Value& value)
 {
 	if (!value.IsObject()) return false;

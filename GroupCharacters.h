@@ -13,28 +13,28 @@ private:
 	
 	std::vector <DefaultHuman*> party;
 public:
-	//Конструктор с параметрами
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	GroupCharacters(std::vector <DefaultHuman*> _party);
 
-	//Конструктор по умолчанию
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	GroupCharacters();
 	
-	//Добавление нового персонажа в команду
+	//Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РїРµСЂСЃРѕРЅР°Р¶Р° РІ РєРѕРјР°РЅРґСѓ
 	void addCharacter(DefaultHuman* character);
 
-	//Удаление персонажа из команды
+	//РЈРґР°Р»РµРЅРёРµ РїРµСЂСЃРѕРЅР°Р¶Р° РёР· РєРѕРјР°РЅРґС‹
 	void kickCharacter(DefaultHuman* character);
 
-	//Выбрать персонажа
+	//Р’С‹Р±СЂР°С‚СЊ РїРµСЂСЃРѕРЅР°Р¶Р°
 	DefaultHuman* choiceCharacter(int index);
 
-	//Получить список команды
+	//РџРѕР»СѓС‡РёС‚СЊ СЃРїРёСЃРѕРє РєРѕРјР°РЅРґС‹
 	std::vector <DefaultHuman*> getGroup();
 
-	//Сериализация
+	//РЎРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	Document toJSON() override;
 
-	//Десериализация
+	//Р”РµСЃРµСЂРёР°Р»РёР·Р°С†РёСЏ
 	bool fromJSON(const Value& value) override;
 
 	bool operator== (const GroupCharacters& otherGroup);
