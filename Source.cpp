@@ -5,6 +5,7 @@
 #include "GroupCharacters.h"
 #include "Battle.h"
 #include <memory>
+#pragma execution_character_set("utf-8")
 
 #include <iostream>
 #include <vector>
