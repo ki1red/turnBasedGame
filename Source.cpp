@@ -13,6 +13,7 @@
 
 using namespace std;
 
+//Запуск игры
 void gameTest()
 {
 	GroupCharacters Green, Blue(vector <DefaultHuman*> (0));
@@ -172,6 +173,7 @@ void gameTest()
 
 }
 
+//Вспомогательная
 void printJSON(const Document& d)
 {
 	StringBuffer buffer;
@@ -180,6 +182,7 @@ void printJSON(const Document& d)
 	cout << buffer.GetString() << endl;
 }
 
+//Тестирование сериализации
 void testJSON()
 {
 
@@ -289,9 +292,8 @@ void testJSON()
 void main()
 {
 	setlocale(LC_ALL, "Ru");
-	//firstTest();
 	//gameTest();
-	testJSON();
+	//testJSON();
 
 	return;
 }
